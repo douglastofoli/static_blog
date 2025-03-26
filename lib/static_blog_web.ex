@@ -26,6 +26,7 @@ defmodule StaticBlogWeb do
       # Import common connection and controller functions to use in pipelines
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 
@@ -46,6 +47,12 @@ defmodule StaticBlogWeb do
       import Plug.Conn
 
       unquote(verified_routes())
+    end
+  end
+
+  def live_view do
+    quote do
+      use Phoenix.LiveView
     end
   end
 

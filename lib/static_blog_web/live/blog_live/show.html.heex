@@ -1,0 +1,15 @@
+<div class="post">
+  <h1>{@post.title}</h1>
+  <p>By {@post.author}</p>
+
+  {Phoenix.HTML.raw(@post.content)}
+</div>
+
+<div class="more-by-author">
+  <h3>More posts by {@post.author}</h3>
+  <ul>
+    <li :for={post <- @posts_by_author}>
+      {post.title}
+    </li>
+  </ul>
+</div>
